@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'UI/welcome.dart';
+import 'db/hindi_story_db_helper.dart';
+DBHelper dbHelper = DBHelper();
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'हिंदी कहानी',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Welcome(),
+    );
+  }
+}
+
+
