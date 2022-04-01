@@ -17,7 +17,18 @@ class _AboutAppState extends State<AboutApp> {
         title: const Text("About App"),
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: [
+                Color(0xFF3366FF),
+                Color(0xFF00CCFF),
+              ],
+              begin: FractionalOffset(1.0, 1.0),
+              end: FractionalOffset(1.0, 0.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
+        padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
         child: Column(
           children: [
             Text(
@@ -25,33 +36,43 @@ class _AboutAppState extends State<AboutApp> {
               style: GoogleFonts.poppins(
                 color: Colors.black,
                 fontSize: 16.0,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.justify,
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Text(
               "This app speaks to us daily with good stories allowing us to share and enrich the world with a collaborative experience.",
               style: GoogleFonts.poppins(
                 color: Colors.black,
                 fontSize: 16.0,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.justify,
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Text(
               "1000+ Majedar Kahani Story is a Best App for Har Tarah Ki Romanchak Kahaniya.",
               style: GoogleFonts.poppins(
                 color: Colors.black,
                 fontSize: 16.0,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.justify,
             ),
-            const SizedBox(height: 30,),
+            const SizedBox(
+              height: 30,
+            ),
             Text(
               "The app contains all indian hindi stories, app includes..",
               style: GoogleFonts.poppins(
                 color: Colors.black,
                 fontSize: 16.0,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.justify,
             ),

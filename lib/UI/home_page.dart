@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hindistory/UI/abouthisapp.dart';
+import 'package:hindistory/UI/category_view_data.dart';
 
 import '../main.dart';
 
@@ -29,7 +30,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
 
-    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -40,40 +40,65 @@ class _HomePageState extends State<HomePage> {
         physics: const BouncingScrollPhysics(),
         itemCount: dbHelper.homeCategory.length,
         itemBuilder: (context, v) {
-          return Container(
-            margin: const EdgeInsets.only(left: 15,right: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 20.0,),
-                Stack(
-                  children: [
-                    Image.asset('assets/images/Group 1.png',
-                    fit: BoxFit.cover,
-                    ),
-                    Positioned(
-                      left: 24.0,
-                      top: 30.0,
-                        child:  Row(
+          return GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CategoryViewData(
+                          nameTitle:
+
+                              "${dbHelper.homeCategory[v]['REMEDIE_NAME']}",
+
+                      id: dbHelper.homeCategory[v]['ID'],
+                      )));
+              print(dbHelper.homeCategory[v]['ID']);
+            },
+            child: Container(
+              margin: const EdgeInsets.only(left: 15, right: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Stack(
+                    children: [
+                      Image.asset(
+                        'assets/images/Group 1.png',
+                        fit: BoxFit.cover,
+                      ),
+                      Positioned(
+                        left: 24.0,
+                        top: 30.0,
+                        child: Row(
                           children: [
-                            const Image(image: AssetImage('assets/images/ganesha.png'),
+                            const Image(
+                              image: AssetImage('assets/images/ganesha.png'),
                               height: 30,
                               width: 30,
                               color: Colors.black,
                             ),
-                           const SizedBox(width: 30.0,),
-                            Text("${dbHelper.homeCategory[v]['REMEDIE_NAME']}",style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16
-                            ),),
+                            const SizedBox(
+                              width: 30.0,
+                            ),
+                            Text(
+                              "${dbHelper.homeCategory[v]['REMEDIE_NAME']}",
+                              style: GoogleFonts.poppins(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 16),
+                            ),
                           ],
                         ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10.0,),
-              ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10.0,
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -82,67 +107,64 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           children: [
             DrawerHeader(
-                child: Image.asset('assets/images/logo_hindi_story.png'),
+              child: Image.asset('assets/images/logo_hindi_story.png'),
             ),
             //Like Story
-
-
-            GestureDetector(
-              onTap: (){
-                Navigator.pop(context);
-              },
-              child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
-                child: Stack(
-                  children: [
-                    Image.asset('assets/images/Group 1.png',
-                      fit: BoxFit.cover,
-                    ),
-                    Positioned(
-                      bottom: 20.0,
-                      child: Row(
-                        children: [
-                          const SizedBox(
-                            width: 10.0,
-                          ),
-                          const Icon(
-                            CupertinoIcons.heart,
-
-                          ),
-                          const SizedBox(
-                            width: 15.0,
-                          ),
-                          Text(
-                            "Liked Story",
-                            style: GoogleFonts.poppins(
-                              color: Colors.black,
-                              fontSize: 16.0,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-              ),
-            ),
-
-
+            //
+            // GestureDetector(
+            //   onTap: () {
+            //     Navigator.pop(context);
+            //   },
+            //   child: Container(
+            //     margin: const EdgeInsets.only(left: 10, right: 10),
+            //     child: Stack(
+            //       children: [
+            //         Image.asset(
+            //           'assets/images/Group 1.png',
+            //           fit: BoxFit.cover,
+            //         ),
+            //         Positioned(
+            //           bottom: 20.0,
+            //           child: Row(
+            //             children: [
+            //               const SizedBox(
+            //                 width: 10.0,
+            //               ),
+            //               const Icon(
+            //                 CupertinoIcons.heart,
+            //               ),
+            //               const SizedBox(
+            //                 width: 15.0,
+            //               ),
+            //               Text(
+            //                 "Liked Story",
+            //                 style: GoogleFonts.poppins(
+            //                   color: Colors.black,
+            //                   fontSize: 16.0,
+            //                 ),
+            //               ),
+            //             ],
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
 
             const SizedBox(
               height: 15.0,
             ),
 
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/Group 1.png',
+                    Image.asset(
+                      'assets/images/Group 1.png',
                       fit: BoxFit.cover,
                     ),
                     Positioned(
@@ -153,7 +175,9 @@ class _HomePageState extends State<HomePage> {
                           Container(
                               margin: const EdgeInsets.only(left: 10),
                               child: const Icon(CupertinoIcons.bell)),
-                          const SizedBox(width: 17,),
+                          const SizedBox(
+                            width: 17,
+                          ),
                           Text(
                             "Notification",
                             style: GoogleFonts.poppins(
@@ -161,7 +185,9 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16.0,
                             ),
                           ),
-                          const SizedBox(width: 70,),
+                          const SizedBox(
+                            width: 70,
+                          ),
                           ValueListenableBuilder(
                               valueListenable: isNotification,
                               builder: (context, v, c) {
@@ -179,7 +205,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ),
             ),
 
@@ -189,16 +214,16 @@ class _HomePageState extends State<HomePage> {
               height: 10.0,
             ),
 
-
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/Group 1.png',
+                    Image.asset(
+                      'assets/images/Group 1.png',
                       fit: BoxFit.cover,
                     ),
                     Positioned(
@@ -224,7 +249,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ),
             ),
 
@@ -235,14 +259,15 @@ class _HomePageState extends State<HomePage> {
             ),
             //Privacy  Policy
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/Group 1.png',
+                    Image.asset(
+                      'assets/images/Group 1.png',
                       fit: BoxFit.cover,
                     ),
                     Positioned(
@@ -268,25 +293,25 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ),
             ),
-
 
             const SizedBox(
               height: 10.0,
             ),
             //About App
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutApp()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const AboutApp()));
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/Group 1.png',
+                    Image.asset(
+                      'assets/images/Group 1.png',
                       fit: BoxFit.cover,
                     ),
                     Positioned(
@@ -312,24 +337,23 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ),
             ),
-
 
             const SizedBox(
               height: 10.0,
             ),
             //Share
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pop(context);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 10,right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: Stack(
                   children: [
-                    Image.asset('assets/images/Group 1.png',
+                    Image.asset(
+                      'assets/images/Group 1.png',
                       fit: BoxFit.cover,
                     ),
                     Positioned(
@@ -355,7 +379,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ],
                 ),
-
               ),
             ),
 
@@ -365,8 +388,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-
-
     );
   }
 }

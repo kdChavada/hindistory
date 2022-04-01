@@ -37,8 +37,12 @@ class DBHelper {
     var db = await openDatabase(path);
     category = await db.query('REMEDIES');
     homeCategory =  await db.query('REMEDIE_TYPE');
+
+
     if (kDebugMode) {
       print(category.length);
+      print(homeCategory.length);
+
     }
   }
 }
