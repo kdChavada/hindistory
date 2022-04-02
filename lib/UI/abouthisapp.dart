@@ -14,7 +14,7 @@ class _AboutAppState extends State<AboutApp> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("About App"),
+        title: const Text("ऐप के बारे में"),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -32,9 +32,9 @@ class _AboutAppState extends State<AboutApp> {
         child: Column(
           children: [
             Text(
-              "hindi stories containing 1000+ interesting stories. Wonderful story about god, festivals, motivational stories, akbar-barbel, tenali raman stories, panchtantra, story, moral stories, funny/comedy, motivational, hindi novel/upanyas, educational, dadi nani ki kahaniya , lok kathayen, kisse kahaniya, kathayen, Animal, success, life short story, amazing and unique stories etc.",
+              "हिंदी कहानियां जिनमें 1000+ रोचक कहानियां हैं। भगवान के बारे में अद्भुत कहानी, त्यौहार, प्रेरक कहानियां, अकबर-बारबेल, तेनाली रमन कहानियां, पंचतंत्र, कहानी, नैतिक कहानियां, मजेदार/हास्य, प्रेरक, हिंदी उपन्यास/उपन्यास, शैक्षिक, दादी नानी की कहानियां, लोक कथाएं, किस्से कहानियां, कथाएं , पशु, सफलता, जीवन लघु कहानी, अद्भुत और अनोखी कहानियाँ आदि।",
               style: GoogleFonts.poppins(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
               ),
@@ -44,9 +44,9 @@ class _AboutAppState extends State<AboutApp> {
               height: 30,
             ),
             Text(
-              "This app speaks to us daily with good stories allowing us to share and enrich the world with a collaborative experience.",
+              "यह ऐप हमें प्रतिदिन अच्छी कहानियों के साथ बात करता है जिससे हम एक सहयोगी अनुभव के साथ दुनिया को साझा और समृद्ध कर सकते हैं।",
               style: GoogleFonts.poppins(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
               ),
@@ -56,9 +56,9 @@ class _AboutAppState extends State<AboutApp> {
               height: 30,
             ),
             Text(
-              "1000+ Majedar Kahani Story is a Best App for Har Tarah Ki Romanchak Kahaniya.",
+              "1000+ मजेदार कहानी कहानी हर तरह की रोमनचक कहानी के लिए एक सर्वश्रेष्ठ ऐप है।",
               style: GoogleFonts.poppins(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
               ),
@@ -68,9 +68,9 @@ class _AboutAppState extends State<AboutApp> {
               height: 30,
             ),
             Text(
-              "The app contains all indian hindi stories, app includes..",
+              "ऐप में सभी भारतीय हिंदी कहानियां हैं, ऐप में शामिल हैं ..",
               style: GoogleFonts.poppins(
-                color: Colors.black,
+                color: Colors.white,
                 fontSize: 16.0,
                 fontWeight: FontWeight.w600,
               ),
